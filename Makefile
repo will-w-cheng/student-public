@@ -1,10 +1,10 @@
-# Configuration, override port with usage: make PORT=4300
-PORT ?= 4200
-REPO_NAME ?= student
+# Configuration, override port with usage: make PORT=4200
+PORT ?= 4100
+REPO_NAME ?= teacher
 LOG_FILE = /tmp/jekyll$(PORT).log
 # Exceptions will stop make
 SHELL = /bin/bash
-.SHELLFLAGS = -e
+#.SHELLFLAGS = -e
 
 # Phony Targets, makefile housekeeping for below definitions
 .PHONY: default server convert clean stop
@@ -80,10 +80,7 @@ clean: stop
 # Stop the server and kill processes
 stop:
 	@echo "Stopping server..."
-	@# kills process running on port $(PORT)
-	@@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
+	@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
 	@echo "Stopping logging process..."
-	@# kills previously running logging processes
-	@@ps aux | awk -v log_file=$(LOG_FILE) '$$0 ~ "tail -f " log_file { print $$2 }' | xargs kill >/dev/null 2>&1 || true
-	@# removes log
+	@ps aux | awk -v log_file=$(LOG_FILE) '$$0 ~ "tail -f " log_file { print $$2 }' | xargs kill >/dev/null 2>&1 || true
 	@rm -f $(LOG_FILE)
