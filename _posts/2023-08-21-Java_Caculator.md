@@ -8,6 +8,8 @@ type: hacks
 courses: { csse: {week: 0}, csp: {week: 0}, csa: {week: 0} }
 ---
 
+%%html
+
 <!-- Heading -->
 <h1>Grade Calculator</h1>
 <h2>Input scores, press tab to add each new number.</h2>
