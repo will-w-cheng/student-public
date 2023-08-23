@@ -1,4 +1,4 @@
-## Prilasey's Page
+## Prilasey's Page 
 
 Go to my [Github account](https://github.com/will-w-cheng) 😈😈😈😈😈😈😈😈😈😈😈😈😈, please star all my repos!!
 
@@ -7,7 +7,7 @@ Go to my [Github account](https://github.com/will-w-cheng) 😈😈😈😈😈�
 
 
 
-## Overview of Hacks, Study and Tangibles
+## Overview of Hacks, Study and Tangibles.
 Blogging in GitHub pages is a way to learn and code at the same time!
 
 ![csse](/student/images/image.jpg)
