@@ -32,7 +32,7 @@ Blogging in GitHub pages is a way to learn and code at the same time!
 - [x] Learn how to use git
 - [x] Use a good theme
 
-## Just a cool table I guess aashray
+## Just a cool table I guess 
 
 | Hi | Hi |
 | ----------- | ----------- |
