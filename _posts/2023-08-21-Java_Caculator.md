@@ -5,7 +5,7 @@ layout: post
 title: Java Calculator
 description: Cool javascript calculator thing I guess
 type: hacks
-courses: { csse: {week: 0}, csp: {week: 0}, csa: {week: 0} }
+courses: { csse: {week: 0}, csp: {week: 1}, csa: {week: 0} }
 ---
 
 %%html
