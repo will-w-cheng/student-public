@@ -1,4 +1,11 @@
 <style>
+  body {
+    background-color: #171515;
+    color: #ffffff;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   font-family: Monospace;
@@ -60,11 +67,5 @@ Blogging in GitHub pages is a way to learn and code at the same time!
 - [ ] Learn Java
 - [x] Learn how to use git
 - [x] Use a good theme
-
-## Just a cool table I guess 
-
-| Hi | Hi |
-| ----------- | ----------- |
-| Bye | Bye |
 
 
