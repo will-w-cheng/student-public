@@ -1,6 +1,23 @@
-<header class="site-header">
+<!-- <header class="site-header"> -->
+<style>
+  h1 {
+    color: #0099cc; 
+  }
+  img{
+    position:relative;
+    border: 3px solid;
+    border-color: rgb(41, 38, 38);
+  }
 
-  <div id="header">
+  .pfp {
+    border-radius: 50%;
+    position:absolute;
+    left: -300px;
+    /* top: 200px; */
+  }
+  
+</style>
+  <!-- <div id="header">
     <nav>
       <ul>
         <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
@@ -10,6 +27,18 @@
         <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
         <li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>
       </ul>
+    </nav>
+  </div><!-- end header -->
+<!-- </header>  -->
+<img src="{{site.baseurl}}/images/hyouka.jpg" class="pfp">
+
+<header class="site-header">
+  <div id="header">
+    <nav>
+      <a href="{{site.baseurl}}/"><h1 style="font-size: 15px;">Home</h1></a> <br>
+      <a href="{{site.baseurl}}/csp"><h1 style="font-size: 15px;">CSP</h1></a><br>
+      <a href="{{site.baseurl}}/blogs"><h1 style="font-size: 15px;">Blogs</h1></a><br>
+      <a href="{{ site.github.repository_url }}#readme"><h1 style="font-size: 15px;">View On GitHub</h1></a></button> <br>
     </nav>
   </div><!-- end header -->
 </header>
