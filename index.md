@@ -67,7 +67,6 @@
   <h1>Prilasey's Page</h1>
 </div>
 
-<!-- Rest of your content -->
 
 <script>
   const typewriter = document.querySelector('.typewriter h1');
@@ -91,7 +90,7 @@ Blogging in GitHub pages is a way to learn and code at the same time!
 
 
 
-- 👋Hi my name is <span style="color: blue;">Will Cheng</span>
+- 👋Hi my name is [Will Cheng](https://github.com/will-w-cheng)
 - 👀 I’m interested in Cybersecurity (CyberPatriot XIV National Finalist), Biodata engineering, Neuroimaging, Computer Science, Gaming, and Competitive Programming
 - 🌱 I’m currently researching at [Population Neuroscience and Genetics Lab at UCSD](https://chd.ucsd.edu/research/PoNG/index.html), where I've made a VCF file parser to count mutational differences in genetic data
 - 💞️ Please <span style="color: yellow;">star</span> all my github repositories, would be deeply appreciated  
