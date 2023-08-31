@@ -6,7 +6,9 @@ categories: [C4.9]
 courses: {  csp: {week: 2} }
 tags: [javascript]
 ---
-# Change event code for W A S and D to identify number value for characters utilizing the char function and changing the cases for the UTF numbers that correlate with those characters
+# What we did for this week:
+
+Change event code for W A S and D to identify number value for characters utilizing the char function and changing the cases for the UTF numbers that correlate with those characters
 
 <style>
 
@@ -73,8 +75,13 @@ tags: [javascript]
 </style>
 
 
+
+
+
 <div class="container">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <p>
+        </p>
         <p class="fs-4">Snake score: <span id="score_value">0</span></p>
     </header>
     <div class="container bg-secondary" style="text-align:center;">
