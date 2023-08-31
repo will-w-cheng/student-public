@@ -1,4 +1,33 @@
-## Prilasey's Page 
+<style>
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  font-family: Monospace;
+  border-right: .015em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.015em; /* Adjust as needed */
+  animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .75s step-end infinite;
+  animation-delay: 2000ms;
+  animation-fill-mode: both;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+</style>
+<div class="typewriter">
+  <h1>Prilasey's Page</h1>
+</div>
 
 Go to my [Github account](https://github.com/will-w-cheng) 😈😈😈😈😈😈😈😈😈😈😈😈😈, please star all my repos!!
 
