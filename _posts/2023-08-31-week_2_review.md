@@ -1,4 +1,3 @@
-
 ---
 comments: True
 layout: post
