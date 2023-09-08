@@ -9,7 +9,9 @@ type: hacks
 # Hi👋👋👋👋
 
 ## So there's either two reasons your reading this:
-1. You randomly stumbled upon my blog because you were bored or
+1. You randomly stumbled upon our blog because you were bored or
 2. Your Mr. Mortensen 
 
-## So before we move on I'll just give a little bit information abuot me 
+## So before we move on we will just give a little bit information about us:
+1. We're supper into linux internals especially understanding it from the first calls of syscalls and glibc interaction with linux 
+![csse](/student/images/kernel.png)
