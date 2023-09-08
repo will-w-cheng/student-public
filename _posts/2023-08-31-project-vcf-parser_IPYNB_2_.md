@@ -2,9 +2,9 @@
 title: Python VCF parser code
 toc: True
 description: None
-courses: {'csp': {'week': 2}}
+courses: {'csp': {'week': 3}}
 categories: ['C3.0', 'C3.1', 'C4.1']
-type: tangibles
+type: hacks
 ---
 
 ## VCF python parser I've been using at the lab

@@ -5,7 +5,7 @@ description: A Tech Talk on Linux and the Bash shell.
 toc: True
 comments: True
 categories: ['5.A', 'C4.1']
-courses: {'csp': {'week': 0}}
+courses: {'csse': {'week': 1}, 'csp': {'week': 0, 'categories': ['6.B']}, 'csa': {'week': 0}}
 type: hacks
 ---
 
