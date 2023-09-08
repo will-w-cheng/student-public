@@ -6,12 +6,25 @@ description: creation of a tic tac toe game
 type: hacks
 courses: {'csp': {'week': 3}}
 ---
-
 <style>
     /* Add your CSS styles for the Tic Tac Toe game here */
+    /* Center content and add spacing */
     .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        margin-top: 20px;
     }
+
+    .game-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px; /* Add margin to separate game board and title */
+        padding-top: 20px; /* Add padding above the game board */
+    }
+
     .cell {
         width: 100px;
         height: 100px;
@@ -21,26 +34,32 @@ courses: {'csp': {'week': 3}}
         line-height: 100px;
         border: 1px solid #ccc;
         cursor: pointer;
+        vertical-align: middle; /* Center content vertically */
     }
 
-    #gameover {
-        display: none;
-        font-size: 24px;
+    .cell::selection {
+        background-color: transparent; /* Make the text selection background transparent */
     }
 </style>
+
+
+
 
 <div class="container">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <h1 class="fs-4">Tic Tac Toe</h1>
     </header>
-    <div id="board">
-        <!-- The game board will be created here -->
-    </div>
-    <div id="gameover">
-        <p id="gameover_message"></p>
-        <button id="new_game" onclick="resetGame()">New Game</button>
+    <div class="game-wrapper">
+        <div id="board">
+            <!-- The game board will be created here -->
+        </div>
+        <div id="gameover">
+            <p id="gameover_message"></p>
+            <button id="new_game" onclick="resetGame()">New Game</button>
+        </div>
     </div>
 </div>
+
 
 <script>
     // JavaScript code for the Tic Tac Toe game
