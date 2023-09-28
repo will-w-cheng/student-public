@@ -351,6 +351,17 @@ if (age1 > age2) {
 ```python
 %%js
 // put your javascript code here
+var population_a = 6;
+var population_b = 6;
+
+if (population_a > population_b) {
+  console.log("a is greater than b. yippee");
+} else if (population_a < population_b) {
+  console.log("a is less than b. boo hoo");
+} else {
+  console.log("a is equal to b. equilibrium like from chemistry");
+}
+
 ```
 
 

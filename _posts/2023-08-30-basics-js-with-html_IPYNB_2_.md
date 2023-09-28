@@ -35,6 +35,20 @@ console.log(titleElement)
 </script>
 ```
 
+
+<!-- the ID must be specified within the element -->
+<h1 id="domTitleID">My Title</h1>
+
+<!-- javascript goes here -->
+<script>
+var titleElement = document.getElementById("domTitleID")
+<!-- outputs h1 tag -->
+console.log("Example #1, show element in DOM")
+console.log(titleElement)
+</script>
+
+
+
 # Getting the data within the HTML element
 - The variable titleElement stores the "object"
 - Basically think of this as the group of data enclosed in HTML tag
@@ -56,6 +70,20 @@ console.log(titleElement.innerHTML)
 </script>
 ```
 
+
+<!-- the ID must be specified within the element -->
+<h1 id="domTitleIDget">My Title</h1>
+
+<!-- javascript goes here -->
+<script>
+var titleElement = document.getElementById("domTitleIDget")
+<!-- outputs h1 innerHTML from h1 tag -->
+console.log("Example #2, show innerHTML")
+console.log(titleElement.innerHTML)
+</script>
+
+
+
 # Setting the data within the HTML Element
 - The innerHTML data in this "object" can be set like a variable
   - Change the value of the innerHTML using the "=" (assignment) operator
@@ -75,6 +103,21 @@ console.log("Example #3, update innerHTML")
 console.log(titleElement.innerHTML)
 </script>
 ```
+
+
+<!-- the ID must be specified on the element -->
+<h1 id="domTitleIDset">My Title</h1>
+
+<!-- javascript goes here -->
+<script>
+var titleElement = document.getElementById("domTitleIDset")
+titleElement.innerHTML = "Set and Update My Title"
+<!-- outputs h1 innerHTML after h1 tag has been updated -->
+console.log("Example #3, update innerHTML")
+console.log(titleElement.innerHTML)
+</script>
+
+
 
 # Creating elements
 - Create a new element with the document.createElement function -> takes in the type of element
@@ -99,6 +142,25 @@ console.log(titleElement.innerHTML)
    console.log(pElement)
 </script>
 ```
+
+
+<!-- the ID must be specified on the element -->
+<div id="divContainerID">
+    <h1 id="h1ElementID">My Title</h1>
+</div>
+
+<!-- javascript goes here -->
+<script>
+   // creates a new element
+   var pElement = document.createElement("p")
+   pElement.innerHTML = "Starting a paragraph of text."
+
+   // outputs p tag after it has been created
+   console.log("Example #4, create a p tag within JS")
+   console.log(pElement)
+</script>
+
+
 
 # Issue! How to Create element that appears in HTML?
 - Here is a visualization of what is happening => the "p" is not placed inside the HRML page!
@@ -248,18 +310,66 @@ console.log(titleElement.innerHTML)
 
 ```python
 %%html
-<!-- html code goes here (make sure to run) -->
+<div>
+    <h1>Geoguessor training game</h1>
+    <button type="button" onclick="alternateLinks()"><i>Click me</i></button>
+</div>
+
+<div id="link-container">
+    <h2>Wikipedia for information for different place</h2>
+    <a id="link1" href="https://en.wikipedia.org/wiki/China">China</a>
+    <a id="link2" style="display:none" href="https://en.wikipedia.org/wiki/Russia">Russia</a>
+</div>
 
 <script>
-  // your javascript code goes here
+    var currentLink = 1;
+
+    function alternateLinks() {
+        var link1 = document.getElementById("link1");
+        var link2 = document.getElementById("link2");
+
+        if (currentLink === 1) {
+            link1.style.display = "none";
+            link2.style.display = "inline";
+            currentLink = 2;
+        } else {
+            link1.style.display = "inline";
+            link2.style.display = "none";
+            currentLink = 1;
+        }
+    }
 </script>
 ```
 
 
-<!-- html code goes here (make sure to run) -->
+<div>
+    <h1>Geoguessor training game</h1>
+    <button type="button" onclick="alternateLinks()"><i>Click me</i></button>
+</div>
+
+<div id="link-container">
+    <h2>Wikipedia for information for different place</h2>
+    <a id="link1" href="https://en.wikipedia.org/wiki/China">China</a>
+    <a id="link2" style="display:none" href="https://en.wikipedia.org/wiki/Russia">Russia</a>
+</div>
 
 <script>
-  // your javascript code goes here
+    var currentLink = 1;
+
+    function alternateLinks() {
+        var link1 = document.getElementById("link1");
+        var link2 = document.getElementById("link2");
+
+        if (currentLink === 1) {
+            link1.style.display = "none";
+            link2.style.display = "inline";
+            currentLink = 2;
+        } else {
+            link1.style.display = "inline";
+            link2.style.display = "none";
+            currentLink = 1;
+        }
+    }
 </script>
 
 

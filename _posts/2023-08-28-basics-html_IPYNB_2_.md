@@ -163,12 +163,30 @@ Div (groups together related content)
 
 ```python
 %%html
+<div>
+    <p>Geoguesser</p>
+    <button type = "button">click me</button>
+</div>
 
-<!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
+<div>
+    <p>Links to github and idea sheet</p>
+    <a href="https://github.com/will-w-cheng/Team-Influencer-Innovators">TEAM INFLUENCER INNOVATORS</a>
+    <a href="https://docs.google.com/document/d/1zrdyzyfYjNBCcGR6giaNl64trvzqST6QLHkerMv3mzc/edit">Doc</a>
+    <p>Bye</p>
+</div>
 ```
 
 
+<div>
+    <p>Geoguesser</p>
+    <button type = "button">click me</button>
+</div>
 
-<!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
+<div>
+    <p>Links to github and idea sheet</p>
+    <a href="https://github.com/will-w-cheng/Team-Influencer-Innovators">TEAM INFLUENCER INNOVATORS</a>
+    <a href="https://docs.google.com/document/d/1zrdyzyfYjNBCcGR6giaNl64trvzqST6QLHkerMv3mzc/edit">Doc</a>
+    <p>Bye</p>
+</div>
 
 

@@ -37,15 +37,19 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var alphabetList = [];
 
 for (var i = 0; i < 10; i++) {
-	alphabetList.push(i);
+	alphabetList.push(alphabet[i]);
 }
 
 console.log(alphabetList);
 ```
 
+
+    <IPython.core.display.Javascript object>
+
+
 ### What I Changed
 
-I changed...
+Originally this function printed the a list of numbers from 0-9. Instead I changed the alphabetList.push(i) section to alphabet.push(alphabet[i]) so that instead of printing the numbers, it will bring the letters from variable alphabet. It only takes the letters from 0-9.
 
 ## Segment 2: Numbered Alphabet
 
@@ -63,12 +67,14 @@ Where the underscores (_) are replaced with the letter and the position of that 
 %%js
 
 // Copy your previous code to built alphabetList here
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var alphabetList = [];
 
 let letterNumber = 5
 
-for (var i = 0; i < alphabetList; i++) {
+for (var i = 0; i < alphabet.length; i++) {
 	if (i === letterNumber) {
-		console.log(letterNumber + " is letter number 1 in the alphabet")
+		console.log(" e is letter number 5 in the alphabet")
 	}
 }
 
@@ -76,9 +82,12 @@ for (var i = 0; i < alphabetList; i++) {
 // "e" is letter number 5 in the alphabet
 ```
 
-### What I Changed
 
-I changed...
+    <IPython.core.display.Javascript object>
+
+
+### What I Changed
+I added the alphabet variable so that ther is no more sytax error and I also changed i < alphabet.length so that 0 is looping the length of the alphabet variable not the alphabetList variable. I also changed the message that is shown if the loop is true so that it prints the correct message. 
 
 ## Segment 3: Odd Numbers
 
@@ -90,20 +99,24 @@ Intended behavior: print a list of all the odd numbers below 10
 ```python
 %%js
 
-let evens = [];
-let i = 0;
+let odds = [];
+let i = 1;
 
 while (i <= 10) {
-  evens.push(i);
+  odds.push(i);
   i += 2;
 }
 
-console.log(evens);
+console.log(odds);
 ```
+
+
+    <IPython.core.display.Javascript object>
+
 
 ### What I Changed
 
-I changed...
+Orginally it prints all of the even numbers between 0 and 10. I changed the variable name to odds because it makes more sense considering we're trying to print odd numbers. I changed i to be defined as 1 instead of zero so that i when I increment by two it would only show the odd numbers and not the even ones. 
 
 # BELOW NOT EDITED
 
@@ -115,24 +128,35 @@ The intended outcome is printing a number between 1 and 100 once, if it is a mul
 ```python
 %%js
 
-var numbers = []
-var newNumbers = []
-var i = 0
+var numbers = [];
+var uniqueNumbers = []; // Array to store unique numbers
+var i = 0;
 
 while (i < 100) {
-    numbers.push(i)
-    i += 1
+    numbers.push(i);
+    i += 1;
 }
+
 for (var i of numbers) {
-    if (numbers[i] % 5 === 0)
-        newNumbers.push(numbers[i])
-    if (numbers[i] % 2 === 0)
-        newNumbers.push(numbers[i])
+    if (numbers[i] % 5 === 0 && uniqueNumbers.indexOf(numbers[i]) === -1) {
+        uniqueNumbers.push(numbers[i]);
+    }
+    if (numbers[i] % 2 === 0 && uniqueNumbers.indexOf(numbers[i]) === -1) {
+        uniqueNumbers.push(numbers[i]);
+    }
 }
-console.log(newNumbers) 
+
+console.log(uniqueNumbers);
 
 
 ```
+
+
+    <IPython.core.display.Javascript object>
+
+
+### What I Changed
+I added an additional array to keep track of the duplicates. Before pushing numbers into the new array (uniqueNumbers) it checks for dupliactes using the indexOf method.
 
 # Challenge
 
@@ -152,9 +176,9 @@ Then repeat this process until you get program working like you want it to work.
 ```python
 %%js
 
-var menu =  {"burger": 3.99,
-         "fries": 1.99,
-         "drink": 0.99}
+var menu =  {"China": 3.99,
+         "U.S.A": 1.99,
+         "Russia": 0.99}
 var total = 0
 
 //shows the user the menu and prompts them to select an item
@@ -163,7 +187,7 @@ for (var item in menu) {
     console.log(item + "  $" + menu[item].toFixed(2)) //why is toFixed used?
 }
 //ideally the code should support mutliple items
-var item = "burger"
+var item = "China"
 
 //code should add the price of the menu items selected by the user 
 console.log(total)
