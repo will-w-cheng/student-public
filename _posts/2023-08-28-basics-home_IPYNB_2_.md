@@ -5,6 +5,7 @@ description: An introduction to key topics in Web Programming
 courses: {'csp': {'week': 5}}
 type: hacks
 permalink: /basics/home
+comments: True
 ---
 
 {% include nav_basics.html %}
@@ -28,4 +29,4 @@ permalink: /basics/home
 
 # Seeing javascript console output in visual studio
 - When printing outputs from javascript to the console you will need to open the developer console
-  - Go to Help->Toggle Developer Tools and click console on the top bar of the developer window
+  - Go to Help->Toggle Developer Tools and click console on the top bar of the developer window 
