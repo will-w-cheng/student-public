@@ -164,12 +164,12 @@ Div (groups together related content)
 ```python
 %%html
 <div>
-    <p>Geoguesser</p>
+    <p>Geoguesser is a game made by Google that give you an explorable real life generation of a real place on the world, and based on geographic attributes, you need to guess where the given place is on the world map.</p>
     <button type = "button">click me</button>
 </div>
 
 <div>
-    <p>Links to github and idea sheet</p>
+    <p>Although we definitely cannot replicate Geoguessr, we made pieces of code which related to Geoguessr, and could help you achieve success in the game.</p>
     <a href="https://github.com/will-w-cheng/Team-Influencer-Innovators">TEAM INFLUENCER INNOVATORS</a>
     <a href="https://docs.google.com/document/d/1zrdyzyfYjNBCcGR6giaNl64trvzqST6QLHkerMv3mzc/edit">Doc</a>
     <p>Bye</p>
