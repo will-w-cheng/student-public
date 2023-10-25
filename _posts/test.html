@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Your CSS styles here */
+        #game-container {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Del_norte_wiki.png/640px-Del_norte_wiki.png');
+            background-size: cover;
+        }
+        #target {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #slot-machine {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="target"></div>
+    </div>
+    <p id="score">Score: 0</p>
+
+    <div id="slot-machine">
+        <h2>Gambling Time... spend your points here</h2>
+        <button id="roll-button">Roll for 3 points</button>
+        <p id="slot-result"></p>
+    </div>
+
+    <audio id="win-audio" src="C:\Users\ryanl\Downloads\Voicy_Xue huā piāo piāo yi jian mei - Meme.mp3" preload="none"></audio>
+
+    <div>
+        <button id="get-button">Get Message</button>
+        <input type="text" id="message" placeholder="Enter your message..." />
+        <div id="response"></div>
+    </div>
+
+    <div id="locationContainer"></div>
+    <div id="imageContainer"></div>
+
+    <script>
+        const gameContainer = document.getElementById("game-container");
+        const target = document.getElementById("target");
+        const scoreDisplay = document.getElementById("score");
+        const rollButton = document.getElementById("roll-button");
+        const slotResult = document.getElementById("slot-result");
+        const winAudio = document.getElementById("win-audio");
+        let score = 0;
+        let dotClicked = false;
+
+        const specificCoordinates = [
+            { x: 40, y: 40 },
+            { x: 20, y: 50 },
+            // Add more coordinates once you get more pictures
+        ];
+
+        let lastRandomIndex = -1;
+
+        function moveTarget() {
+            let randomIndex;
+
+            do {
+                randomIndex = Math.floor(Math.random() * specificCoordinates.length);
+            } while (randomIndex === lastRandomIndex);
+
+            const { x, y } = specificCoordinates[randomIndex];
+
+            const maxX = gameContainer.clientWidth - target.clientWidth;
+            const maxY = gameContainer.clientHeight - target.clientHeight;
+
+            target.style.left = Math.min(x, maxX) + "px";
+            target.style.top = Math.min(y, maxY) + "px";
+            dotClicked = false;
+        }
+
+        target.addEventListener("click", () => {
+            if (!dotClicked) {
+                const earnedPoints = 1;
+                score += earnedPoints;
+                scoreDisplay.textContent = `Score: ${score}`;
+                alert(`You got ${earnedPoints} point!`);
+                dotClicked = true;
+                moveTarget();
+            }
+        });
+
+        gameContainer.addEventListener("click", () => {
+            if (!dotClicked) {
+                alert(`You got 0 points!`);
+                moveTarget();
+            }
+        });
+
+        const items = [
+            "Lighthouse of Alexandria",
+            "Great Wall of China",
+            "Chichen Itza",
+        ];
+
+        rollButton.addEventListener("click", () => {
+            if (score >= 3) {
+                score -= 3;
+                scoreDisplay.textContent = `Score: ${score}`;
+                const randomItemIndex = Math.floor(Math.random() * items.length);
+                const selectedItem = items[randomItemIndex];
+                slotResult.textContent = `You rolled and won: ${selectedItem}`;
+
+                if (selectedItem === "Great Wall of China") {
+                    winAudio.play();
+                }
+            } else {
+                slotResult.textContent = "Not enough points to roll.";
+            }
+        });
+
+        moveTarget();
+
+        function getMessage() {
+            const apiUrl = "https://teaminfluencerinnovator.stu.nighthawkcodingsociety.com/api/locations/";
+
+            fetch(apiUrl, {
+                method: "GET"
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var tempstring = "";
+                data.forEach(location => {
+                    const { location_name, image } = location;
+
+                    const img = new Image();
+                    img.onload = () => {
+                        imageContainer.appendChild(img);
+                    };
+
+                    img.src = "data:image/png;base64," + image;
+
+                    locationContainer.innerHTML += `<div>${location_name}</div>`;
+
+                    const coordinates = location_name.match(/\(([^)]+)\)/);
+
+                    if (coordinates && coordinates[1]) {
+                        const coordinateVariable = coordinates[1];
+                        console.log("Coordinates:", coordinateVariable);
+                    }
+                });
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        // Call the getMessage function when the Get Message button is clicked
+        document.getElementById("get-button").addEventListener("click", getMessage);
+
+        // Call the getMessage function when Enter is pressed in the input field
+        document.getElementById("message").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                getMessage();
+            }
+        });
+
+        // Automatically call getMessage function every 100 milliseconds
+        setInterval(getMessage);
+    </script>
+</body>
+</html>
