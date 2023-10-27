@@ -5,7 +5,7 @@ description: College Board 3.12 and 3.13
 toc: True
 comments: True
 type: hacks
-courses: {'csp': {'week': 9}}
+courses: {'csp': {'week': 10}}
 ---
 
 ## What is a procedure?
@@ -221,7 +221,10 @@ Create your own robot problem! Include a picture with a square grid to represent
 
 Add your image here by adding the link between the "" and removing the comment formatting:
 <!-- <img src=""> -->
-# your code here
+
+
+```python
+
 
 PROCEDURE manueverGrid{
     # Using iteration, the triangle will move forward two times
@@ -241,16 +244,67 @@ PROCEDURE manueverGrid{
     # Rotate towards the right,
     ROTATE_RIGHT()
 
+    # For two times move forward to get to the end location and spot
+    REPEAT 2 TIMES {
+        MOVE_FORWARD()
+    }    
+
 }
+```
+
+### Robot problem
+<img src="https://media.discordapp.net/attachments/975585693751455764/1167148404724469770/grid_a.png?ex=654d12a8&is=653a9da8&hm=880c8e446a5dabfc3da25dde181d44b3a2b8180c7557a8fe481da99acf425fd9&=">
+
+
+
+```python
+
+```
+
 ### Question 3
 Create a program that asks for user input of an integer *n*, and return an array that contains all the prime numbers up to the number *n* (inclusive). Remember to use multiple different functions to better organize the code and increase efficiency.
 
 
 ```python
 def primes(n):
-  
+    # if the number is less then 2 then it is a prime number hehe ehehhehehehehehhehe
+
+    if n < 2:
+        return []
+    else:
+        # Create a boolean list to mark numbers as prime or not, so it'll be like [1, 1, 1, 1, 1, 1, 1, 1]
+        is_prime = [True] * (n + 1)
+        is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime numbers, so you put them in the boolean list as [0, 0] 
+
+        # Start with the first prime number, 2 because that is ia prime number
+        for p in range(2, int(n**0.5) + 1):
+            if is_prime[p]:  # Loop through the numbers that are above two and then find multiples
+                # Mark all multiples of p as non-prime 
+                for i in range(p * p, n + 1, p): 
+                    is_prime[i] = False
+    return is_prime
+    
+
+'''
+ok so here we basically make a new final answer list and then we add it based on the index of the location_bool numbers and by looping through the index and based on the index
+We get a number and then print out that list :))))
+meow meow meow meow meow
 
 
+'''
+final_ans = []
 number = int(input())
-print(primes(number))
+primeBools = primes(number)
+for x in range(0, len(primeBools)):
+    if primeBools[x] == True:
+        final_ans.append(x)
+print(final_ans)
+```
+
+    [2, 3, 5, 7]
+
+
+
+```python
+
 ```
