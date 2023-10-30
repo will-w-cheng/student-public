@@ -220,7 +220,9 @@ print(PercentDiscount(15, 20))
 Create your own robot problem! Include a picture with a square grid to represent the map and triangle to represent the robot. Add a flag to a square to represent the end-point and a shaded-in block to represent a detour. Write a procedure in pseudo-code to move the robot from the start, past the detour, and to the end point.
 
 Add your image here by adding the link between the "" and removing the comment formatting:
-<!-- <img src=""> -->
+### Robot problem
+<img src="https://media.discordapp.net/attachments/975585693751455764/1167148404724469770/grid_a.png?ex=654d12a8&is=653a9da8&hm=880c8e446a5dabfc3da25dde181d44b3a2b8180c7557a8fe481da99acf425fd9&=">
+
 
 
 ```python
@@ -251,10 +253,6 @@ PROCEDURE manueverGrid{
 
 }
 ```
-
-### Robot problem
-<img src="https://media.discordapp.net/attachments/975585693751455764/1167148404724469770/grid_a.png?ex=654d12a8&is=653a9da8&hm=880c8e446a5dabfc3da25dde181d44b3a2b8180c7557a8fe481da99acf425fd9&=">
-
 
 
 ```python
