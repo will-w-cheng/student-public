@@ -10,12 +10,7 @@ type: tangibles
 
 # Issues:
 
-
-## Backend issues
-- 
-
-
-## Integration with frontend and backend problems
+- []
 - [JPG base64 image displayment issue](https://github.com/rliao569/Frontend-CSP/issues/11) - Crucial for exemplifying how URI's (Unique Resource Identifier) and can call upon the data points 
 - [Movement of the target on DOM events, flag logic](https://github.com/rliao569/Frontend-CSP/issues/8) - Added a flag to check bsaed on DOM events and only moved upon once it finished
 
@@ -607,3 +602,10 @@ const imageContainer = document.getElementById("image-container");
 const image = document.createElement("img");
 image.src = imageSrc;
 ```
+
+### AWS deployment fixes
+
+- Learning how to fix the AWS instance especially when the server is down through the SSH instance
+<img src="https://media.discordapp.net/attachments/932459151127355403/1169512175736471552/image.png?ex=6555ac17&is=65433717&hm=844bc0ade03e2400f6bf2c4fe1e0902bd82ae001e322e0d057eb9cafa8bc1877&=&width=1036&height=671">
+<img src="https://cdn.discordapp.com/attachments/932459151127355403/1169512371396546603/image.png?ex=6555ac45&is=65433745&hm=8415bf6b10003cc9fdf7569b27defda1376e56dbe142abfdea6420793e84dc8e&">
+
