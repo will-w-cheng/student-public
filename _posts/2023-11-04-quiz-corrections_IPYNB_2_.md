@@ -2,7 +2,7 @@
 toc: True
 comments: True
 layout: post
-title: Computer Science Principles
+title: Quiz Corrections
 description: Done extremely late in the night and questions that I could improve on
 courses: {'csp': {'week': 10}}
 type: tangibles

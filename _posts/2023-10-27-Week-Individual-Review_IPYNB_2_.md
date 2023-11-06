@@ -609,3 +609,10 @@ image.src = imageSrc;
 <img src="https://media.discordapp.net/attachments/932459151127355403/1169512175736471552/image.png?ex=6555ac17&is=65433717&hm=844bc0ade03e2400f6bf2c4fe1e0902bd82ae001e322e0d057eb9cafa8bc1877&=&width=1036&height=671">
 <img src="https://cdn.discordapp.com/attachments/932459151127355403/1169512371396546603/image.png?ex=6555ac45&is=65433745&hm=8415bf6b10003cc9fdf7569b27defda1376e56dbe142abfdea6420793e84dc8e&">
 
+
+### Reflection
+- **Collaboration**: For presenting i need to improve on implementing on how to go from easier to harder in order to ease in the way that I present. I also think slowing down and preparing exactly what I'm going to say is really important for what I'm going to do this trimester. This can be evident throughout the team teach and thinking about how I can present and talking with Mr Mortensen was really helpful for how I could learn about different items.
+- **Review**: The usefulness of talking and reflecting after events especially witih Mr Mortensen
+- **Project**: I think that collaboration on the backend was extremely well. The cohesiosn and the adhesion within the backend and the frontend integration which was really hard and lacking, I needed to incorporate and consider other people's thoughts and teaching others. I'm really disappointed in how I collaborated this trimester, and honestly I was not a good collaborator and team member. I should've taken the time to explain to my other teammates in the frontend to talk about how I did. 
+- **Perspective**: In general, I think that I could improve on the vision of our project. A "passion" project should be something I extend on other then just night at the museum. In a real world, I should make the project extensible and make it more playable then just one time.
+- 
