@@ -10,10 +10,9 @@ type: tangibles
 
 # Issues:
 
-- []
 - [JPG base64 image displayment issue](https://github.com/rliao569/Frontend-CSP/issues/11) - Crucial for exemplifying how URI's (Unique Resource Identifier) and can call upon the data points 
 - [Movement of the target on DOM events, flag logic](https://github.com/rliao569/Frontend-CSP/issues/8) - Added a flag to check bsaed on DOM events and only moved upon once it finished
-
+- [Model commits](https://github.com/will-w-cheng/team-influencer-innovator-backend/commit/acc30cbb1d5eca1166420795f8af2a07fc33ae1f) - Defining Data within the model with the API data. 
 
 
 # Backend - creating an API endpoint
@@ -94,10 +93,6 @@ if __name__ == "__main__":
 ## the api/locations.py file:
 - The API locations.py is how it handles the requests including put, get, delete, and post requests. For our project, we really only need to have get requests since we don't really need to make any other requests to post any new locations, but we added functionality for it in case we wanted to make it easier to add things to the database. 
 
-
-## api/users.py
-- For just two fields where it's the user and the points assigned to the name of the user and points, however it also handles POST requests
-- <img src="https://cdn.discordapp.com/attachments/1151587106322382948/1168429990417813564/image.png?ex=6551bc3a&is=653f473a&hm=253a548986a46c8d5477b4ea2913f83a59dcf5cbcef54e6bf8135ea34a9266d9&">
 
 ## Learning
 - Learning how to create blueprints, endpoints, and handling the GET requests similar to how it was done in previuso example codes. I also incorporate POST requests to the different users and whatnot 
@@ -198,76 +193,6 @@ class LocationListAPI(Resource):
 api.add_resource(LocationListAPI, "/api/locations")
 ```
 
-
-```python
-import json
-from flask import Blueprint, request, jsonify
-from flask_restful import Api, Resource  # used for REST API building
-
-from model.users import User
-
-user_api = Blueprint('user_api', __name__,
-                     url_prefix='/api/leaderboard')
-
-# API docs https://flask-restful.readthedocs.io/en/latest/api.html
-api = Api(user_api)
-
-class LeaderboardAPI:
-    class _CRUD(Resource):
-        def post(self):
-            '''
-            Create a new user entry in the leaderboard table.
-            Read data from the JSON body.
-            '''
-            body = request.get_json()
-
-            # Validate username
-            username = body.get('username')
-            if username is None or len(username) < 2:
-                return {'message': f'Username is missing or is less than 2 characters'}, 400
-
-            # Validate points (should be a non-negative integer)
-            points = body.get('points')
-            if not isinstance(points, int) or points < 0:
-                return {'message': 'Points must be a non-negative integer'}, 400
-
-            # Create a new leaderboard entry
-            leaderboard_entry = User(username=username, points=points)
-            leaderboard_entry.create()
-
-            # Return the newly created leaderboard entry
-            return jsonify({'username': leaderboard_entry.username, 'points': leaderboard_entry.points})
-
-        def get(self):
-            '''
-            Retrieve the leaderboard data.
-            Read all leaderboard entries and prepare the output in JSON format.
-            '''
-            leaderboard_entries = User.query.all()
-            leaderboard_data = [{'username': entry.username, 'points': entry.points} for entry in leaderboard_entries]
-            return jsonify(leaderboard_data)
-        
-        def put(self):
-            ''' Update user points '''
-            body = request.get_json()
-            username = body.get('username')
-            new_points = body.get('points')
-
-            user = User.query.filter_by(username=username).first()
-            if user is None:
-                return {'message': 'User not found'}, 404
-
-            if new_points is not None:
-                user.update_points(new_points)
-                return {'message': f'Updated points for user {user.username}'}
-
-
-
-    # Building REST API endpoints
-    api.add_resource(_CRUD, '/')  # Create and Read operations
-
-```
-
 ## model/locations.py and model/users.py
 - Locations.py in the model is where the initial data is loaded and we can add some instances for it to work
 - Here base64 is encoded for the images, and we also assign specific things to the database 
@@ -278,6 +203,7 @@ class LeaderboardAPI:
 ```python
 from __init__ import db
 import base64
+import os
 
 class Location(db.Model):
     __tablename__ = "locations"
@@ -301,111 +227,60 @@ def image_to_base64(image_path):
         return base64_string
 
 # Example usage
-image_path = "static/assets/IMG_0902.jpg"  # Relative path to the image
-base64_data = image_to_base64(image_path)
-image_path2 = "static/assets/IMG_0908.jpg"  # Another relative path to a different image
-base64_data2 = image_to_base64(image_path2)
+image_path = "static/assets/images/"  # Relative path to the image
 # locationposition=(20, 45)
 # AND locationposition=(20, 45)
 def init_locations():
-    location1 = Location(location_name="20, 45", image=base64_data)
-    location2 = Location(location_name="35, 40", image=base64_data2)
-    # location3 = Location(location_name="Location 3", image="image3.jpg")  # Placeholder for the third image
+    # Initialize data for now just from lists but later we push it into a database
+    b64_lst = []
+    '''
+    If you want to add an image you can just put it in the static/assets/images
+    But also append your coordinates to the following list below 
+    '''
+    coordinates_data = ["250, 500", "100, 450", "618, 620", "76, 650", "176, 750"]
 
-    db.session.add(location1)
-    db.session.add(location2)
-    # db.session.add(location3)
 
-    db.session.commit()
+    '''
+    Now from here what we do is we loop through all the filenames and the image_path and then append them to lists so it's easy to just loop through later
+    and then add them to a session
+    '''
+    count = 0
+    filenames = [filename for filename in os.listdir(image_path) if os.path.isfile(os.path.join(image_path, filename))]
+
+    # Sort the filenames alphabetically
+    sorted_filenames = sorted(filenames)
+    for filename in sorted_filenames:
+        if os.path.isfile(os.path.join(image_path, filename)):
+            count += 1
+            b64_lst.append(image_to_base64(image_path + filename))
+
+
+    #### Add stuff to the db now
+    for b64_image in range(0, len(b64_lst)):
+        location = Location(location_name=coordinates_data[b64_image], image=b64_lst[b64_image])
+        db.session.add(location)
+        db.session.commit()
+
+    
+
+    '''
+    Old code for this location 
+    '''
+
+
+    # location1 = Location(location_name="20, 45", image=base64_data)
+    # location2 = Location(location_name="35, 40", image=base64_data2)
+    # # location3 = Location(location_name="Location 3", image="image3.jpg")  # Placeholder for the third image
+
+    # db.session.add(location1)
+    # db.session.add(location2)
+    # # db.session.add(location3)
+
+    # db.session.commit()
 
 if __name__ == '__main__':
     init_locations()
 
-```
-
-
-```python
-from datetime import date
-import os
-import base64
-import json
-from sqlalchemy.exc import IntegrityError
-from werkzeug.security import generate_password_hash, check_password_hash
-
-from __init__ import app, db
-
-# Define the User class for the leaderboard table
-class User(db.Model):
-    __tablename__ = 'leaderboard'
-
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(255), unique=True, nullable=False)
-    _points = db.Column(db.Integer, default=0)  # Use _points as a private attribute
-
-    def __init__(self, username, points=0):
-        self.username = username
-        self._points = points  # Initialize _points attribute
-
-    @property
-    def points(self):
-        return self._points
-
-    @points.setter
-    def points(self, points):
-        if points >= 0:
-            self._points = points
-
-    def create(self):
-        """Create a new user entry in the leaderboard table."""
-        try:
-            db.session.add(self)
-            db.session.commit()
-            return self
-        except IntegrityError:
-            db.session.remove()
-            return None
-
-    def read(self):
-        """Retrieve user information from the leaderboard table."""
-        return {
-            "id": self.id,
-            "username": self.username,
-            "points": self.points  # Use the property, not the private attribute
-        }
-
-    def update_points(self, points):
-        """Update the points of a user in the leaderboard."""
-        if points >= 0:
-            self.points = points  # Use the property, not the private attribute
-            db.session.commit()
-            return self
-
-    def delete(self):
-        """Delete a user from the leaderboard."""
-        db.session.delete(self)
-        db.session.commit()
-        return None
-
-# Function to initialize the leaderboard table with sample data
-def initLeaderboard():
-    with app.app_context():
-        # create the database and the leaderboard table
-        db.create_all()
-        
-        users_data = [
-            {"username": "user1", "points": 100},
-            {"username": "user2", "points": 150},
-            {"username": "user3", "points": 50},
-            # Add some more users later for now it's just testing
-        ]
-
-        for data in users_data:
-            user = User(username=data["username"], points=data["points"])
-            user.create()
-
-# Run the initialization function to create and populate the leaderboard
-if __name__ == "__main__":
-    initLeaderboard()
 ```
 
 # Frontend
@@ -611,8 +486,9 @@ image.src = imageSrc;
 
 
 ### Reflection
-- **Collaboration**: For presenting i need to improve on implementing on how to go from easier to harder in order to ease in the way that I present. I also think slowing down and preparing exactly what I'm going to say is really important for what I'm going to do this trimester. This can be evident throughout the team teach and thinking about how I can present and talking with Mr Mortensen was really helpful for how I could learn about different items.
+- **Collaboration**: For presenting i need to improve on implementing on how to go from easier to harder in order to ease in the way that I present. I also think slowing down and preparing exactly what I'm going to say is really important for what I'm going to do this trimester. This can be evident throughout the team teach and thinking about how I can present and talking with Mr Mortensen was really helpful for how I could learn about different items. 
+- **Growth**: Overall, I think i improved a lot this trimester especially for how I want to present to people. I learned how to extend ideas much better then I came in originally in this class, and learned the integral part of presenting. 
 - **Review**: The usefulness of talking and reflecting after events especially witih Mr Mortensen
 - **Project**: I think that collaboration on the backend was extremely well. The cohesiosn and the adhesion within the backend and the frontend integration which was really hard and lacking, I needed to incorporate and consider other people's thoughts and teaching others. I'm really disappointed in how I collaborated this trimester, and honestly I was not a good collaborator and team member. I should've taken the time to explain to my other teammates in the frontend to talk about how I did. 
 - **Perspective**: In general, I think that I could improve on the vision of our project. A "passion" project should be something I extend on other then just night at the museum. In a real world, I should make the project extensible and make it more playable then just one time.
-- 
+
