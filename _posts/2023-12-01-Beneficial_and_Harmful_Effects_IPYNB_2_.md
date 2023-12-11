@@ -5,7 +5,7 @@ layout: post
 title: 5.1 Big Idea Beneficial and Harmful Effects Student Lesson
 description: Collegeboard Big Idea 5.1 Beneficial and Harmful Effects student lesson presented by Team WRONG (Will, Rayyan, Jason, Nathan, and Grayson)
 type: hacks
-courses: {'compsci': {'week': 14}}
+courses: {'csp': {'week': 14}}
 ---
 
 # CB Big Idea 5.1 Beneficial and Harmful Effects Student Lesson

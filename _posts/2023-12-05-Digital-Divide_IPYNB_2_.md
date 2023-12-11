@@ -5,7 +5,7 @@ layout: post
 title: 5.2 Digital Divide Student Lesson
 description: Collegeboard Big Idea 5.2 Digital Divide Student Lesson
 type: hacks
-courses: {'compsci': {'week': 15}}
+courses: {'csp': {'week': 14}}
 ---
 
 ## Standards Covered:
@@ -152,7 +152,7 @@ C. I, II, III, and IV
 
 D. None of the above
 
-
+Answer is C
 |
 
  
@@ -167,7 +167,7 @@ C - Twitter opinions are over-representative of young and urban people
 
 D - Senior citizens are less trained to access online resources during
 
-
+Answer is B
 |
 
 
@@ -182,7 +182,7 @@ institutions
 C - Build internet infrastructure for rural cities in the United States
 
 D - Build a new skyscraper with ultra-fast internet for office workers working at Amazon
-
+Answer is C
 
 |
 
@@ -197,7 +197,7 @@ C - A movie celebrity could eliminate the digital divide in a city by donating e
 
 D - A for-profit company could help reduce the digital divide by paying for
 tutors for introductory computer science classes at schools around the state
-
+Answer is D
 
 |
 
@@ -205,3 +205,4 @@ tutors for introductory computer science classes at schools around the state
 **Extra Credit:**
 Write a few sentences answering the prompt (90%+):
 How can you help end the digital divide?
+- To contribute to ending the digital divide, I can actively participate in initiatives that promote digital literacy and provide access to technology in underserved communities. By volunteering time or resources to educational programs, advocating for affordable internet access, and supporting initiatives that bridge technological gaps, I can help empower individuals with the necessary skills and tools to navigate the digital world. Additionally, raising awareness about the importance of inclusivity in technology and supporting policies that address disparities in access can contribute to creating a more equitable digital landscape.
