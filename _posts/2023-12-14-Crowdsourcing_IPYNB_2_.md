@@ -5,7 +5,7 @@ layout: post
 title: 5.4 Crowd-sourcing
 description: Crowd-sourcing lesson
 type: hacks
-courses: {'compsci': {'week': 16}}
+courses: {'csp': {'week': 16}}
 ---
 
 # Big Idea 5.4: Crowd-sourcing
