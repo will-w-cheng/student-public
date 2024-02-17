@@ -5,7 +5,7 @@ layout: post
 title: 5.2 Digital Divide Student Lesson
 description: Collegeboard Big Idea 5.2 Digital Divide Student Lesson
 type: hacks
-courses: {'compsci': {'week': 15}}
+courses: {'csp': {'week': 15}}
 ---
 
 ## Standards Covered:
