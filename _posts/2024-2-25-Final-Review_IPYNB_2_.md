@@ -1,0 +1,42 @@
+---
+toc: True
+comments: True
+layout: post
+title: Final Individual Review
+description: CPT project review
+type: tangibles
+courses: {'csp': {'week': 20}}
+---
+
+# Project Overview
+- We had the idea of creating videos for people online to share, post, and watch videos they enjoy. As a kid I always really liked watching YouTube and so I wanted to see how it would feel from a developer's perspective to try and build something similar.
+
+# My Feature
+My feature is assigning a VID system to the different videos
+
+[Collegboard Requirments](https://apcentral.collegeboard.org/media/pdf/ap-csp-student-task-directions.pdf)
+
+| Collegeboard Requirements | Me |
+|---------------------------|----|
+| Instructions for input from one of the following: the user, a device, an online datas stream, a file.  | Our site takes videos and uploads them to a specific directory. From there the model will assign a specific Video user ID. ![test](https://files.catbox.moe/u5ykgy.png) |
+| Use of at least one list (or other collection type) to represent a collection of data that is stored and used to manage program complexity and help fulfill the users purpose.  | An example of a collection of data that is stored is the Video ID and other attributes that are stored per each upload of the video ![test2](https://files.catbox.moe/0mb9sp.png)|
+| At least one procedure that contirubted to the program's intended purpose where you have defined: the name, return type, one or more parameters:  | This procedure has a name(create), a return(self), and parameters(self, base64 encoded image for thumbnail): ![test3](https://files.catbox.moe/0mb9sp.png)  |
+| An algorithm that includes sequencing, selection, and iteration that is in the body of the selected procedure  | This snippet shows the sequencing, selection, and iteration throughout the videos, specifically note the Video UserID: ![test4](https://files.catbox.moe/0gsba4.png)  |
+| Calls to your student-developed procedure:  | calling initVideos: ![test5](https://files.catbox.moe/1je33h.png)  |
+| Instructions for output (tactile, audible, visual, or ) based on input and program functionality  | This code that corresponds to the right videoID for clicking on the corresponding video: ![test6](https://files.catbox.moe/i967cp.png) |
+
+
+# Component B: Video
+
+[Link to Video](https://drive.google.com/file/d/16gl8YmNK9re8VfzfjxAPCM6vpX0nwTpm/view?usp=sharing)
+
+| Collegboard Requirements | My Video |
+|---------------------------|----------|
+| Input to program          | MP4 of a video |
+| At least one aspect of the functionality of your program | VideoID uploaded to the database successfully with a specific video ID |
+| Output produced by program | Video uploaded redirects to the correct link with the specific VideoID |
+| My video does not have    | Successful message after uploading the video so you confirm that it was uploaded from the frontend |
+| My video is               | a .mp4, less than 1 minute in length, less than 30MB in file size. |
+
+
+
