@@ -1,0 +1,49 @@
+---
+toc: True
+comments: True
+layout: post
+title: Team Seed
+description: Starting seed for our team
+type: tangibles
+courses: {'csp': {'week': 25}}
+---
+
+# Completion of the 90% seed
+- [Our team blog](https://napoleon-bonaparte-official.github.io/corsica-blog/)
+
+# Team Progress
+
+## Features Prior to Implementation
+
+Description of features prior to implementation:
+
+
+
+* Design and planning
+* Key features
+* [Features prior to implementation](https://kinetekenergy.github.io/blog/posts/Checkpoint_IPYNB_2_/)
+
+Planning table of issues and features:
+
+Features:
+
+|Features|Link|
+|-|-|
+|View count which updates whenever someone views a video|[Issue](https://github.com/Napoleon-Bonaparte-Official/corsica-blog/issues/3)|
+|Video categories to sort videos and choose which category to watch|[Issue](https://github.com/Napoleon-Bonaparte-Official/corsica-blog/issues/3)|
+|Login feature which connects to upload. When uploading a video, the user who uploaded it will be in the description and this will be automatic.|[Issue](https://github.com/Napoleon-Bonaparte-Official/corsica-blog/issues/3)|
+|Deleting user accounts and updating an email so that users can close their account and update information|[Issue](https://github.com/Napoleon-Bonaparte-Official/corsica-blog/issues/3)|
+|Allow users to add a description to their videos. They can also add a tag so that the category feature sorts it|[Issue](https://github.com/Napoleon-Bonaparte-Official/corsica-blog/issues/3)|
+
+## Fosters Participation
+- Yeongsu and Will have been in a group before, so we look forward to incorporating Anthony into our project and integrating some of the things he did in his CPT project.
+
+## Weekly Crossover Review
+- Cycling throughout the roles of participation in the roles of frontend and backend, for example our Machine Learning project for our video recommendation site. The third person can work on integrating them all together or work on wherever is needed for help. 
+
+## Other Miscellaneous stuff
+- Our project is personalized (homepages)
+- Our project works at all times, and was deployed at one point fully working (can't really show it now)
+
+
+
