@@ -3,7 +3,7 @@ comments: True
 layout: post
 title: MCQ 2020 Frequently Missed Questions
 description: Questions and sample Python code to represent the most frequently missed questions on the 2020 AP Computer Science A Multiple Choice Exam.
-type: collab
+type: tangibles
 courses: {'csp': {'week': 26}}
 ---
 

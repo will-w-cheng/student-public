@@ -3,6 +3,7 @@ comments: True
 layout: post
 title: MCQ missed questions
 description: Reflectiona and questions that I missed
+type: tangibles
 courses: {'csp': {'week': 26}}
 ---
 
