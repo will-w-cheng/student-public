@@ -177,18 +177,18 @@ def plot_colors(rgb_triplets):
     plt.show()
 
 # Test the function with a list of RGB triplets
-rgb_triplet = [('11111111', '11111111', '11110000')] # College Board example
+rgb_triplet = [('01001000', '01100101', '01101100')] # College Board example
 plot_colors(rgb_triplet)
 
-rgb_primary = [('1111   1111', '00000000', '00000000'), 
+rgb_primary = [('11111111', '00000000', '00000000'), 
                 ('11111111', '11111111', '00000000'),
                 ('00000000', '00000000', '11111111')]
 plot_colors(rgb_primary)
 ```
 
-    binary: 11111111 11111111 11110000
-    decimal 255 255 240
-    proportion 1.0 1.0 0.9411764705882353
+    binary: 01001000 01100101 01101100
+    decimal 72 101 108
+    proportion 0.2823529411764706 0.396078431372549 0.4235294117647059
 
 
 
@@ -270,6 +270,12 @@ def algorithm_10times(lst):
     for i in lst[:10]:
         pass
 
+def algorithm_nCubedD(lst):
+    for i in lst:
+        for j in lst:
+            for k in lst:
+                pass
+
 # Create a large list
 n = 100000
 lst = list(range(n))
@@ -286,6 +292,12 @@ algorithm_nSquared(lst)
 end = time.time()
 print(f"Algorithm N^2 took {(end - start)*1000:.2f} milliseconds")
 
+# Measure the time taken by algorithm2
+start = time.time()
+algorithm_nSquared(lst)
+end = time.time()
+print(f"Algorithm N^3 took {(end - start)*1000:.2f} milliseconds")
+
 # Measure the time taken by algorithm3
 start = time.time()
 algorithm_10times(lst)
@@ -293,9 +305,29 @@ end = time.time()
 print(f"Algorithm 10 times took {(end - start)*1000:.2f} milliseconds")
 ```
 
-    Algorithm 2 * N took 1.00 milliseconds
-    Algorithm N^2 took 87969.20 milliseconds
-    Algorithm 10 times took 0.00 milliseconds
+    Algorithm 2 * N took 3.97 milliseconds
+
+
+
+    ---------------------------------------------------------------------------
+
+    KeyboardInterrupt                         Traceback (most recent call last)
+
+    Cell In[3], line 46
+         44 # Measure the time taken by algorithm2
+         45 start = time.time()
+    ---> 46 algorithm_nSquared(lst)
+         47 end = time.time()
+         48 print(f"Algorithm N^2 took {(end - start)*1000:.2f} milliseconds")
+
+
+    Cell In[3], line 21, in algorithm_nSquared(lst)
+         19 for i in lst:
+         20     for j in lst:
+    ---> 21         pass
+
+
+    KeyboardInterrupt: 
 
 
 ## 56. Compare execution times of tow version (1D analysis) - Kayden Le
