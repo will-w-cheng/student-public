@@ -11,11 +11,11 @@ courses: {'csp': {'week': 30}}
 
 - ![image](https://i.ibb.co/C710qj1/image.png)
 ## Here we have the unique collection with the different columns such as:
-- the name
-- description
-- views
+- the name of the different videos
+- description of the different videos
+- views of each video
 - the video name stored locally
-- thumbnail image name stored within the instances
+- thumbnail image name of the video stored within the instances
 - _videoID to correspond to each video
 - userID to correspond who uploaded the video
 - genre of the video for sorting
@@ -26,11 +26,12 @@ courses: {'csp': {'week': 30}}
 - In this part we create the table with the initial test data of different videos and their features.
 - ![image](https://i.ibb.co/VMzRmXr/image.png)
 - Here's the creation of the different videos: we utilize the upload_folder which is in the (instance/volumes/uploads) to access the different pictures. After searching for an image in that directory it's converted to base64 and passed to the create method.
-- ![image](https://i.ibb.co/khDLQ8N/image.png)
+- ![image](https://i.ibb.co/BV0v6Nk/image.png)
 - After decoding the base64 image that we passed into the create method, the new image file turns into it's name with ID+name, Then we commit the new image file changes into the database of the thumbnail column and the videoID as the ID.
 
 # List and Dictionaries
 - This section goes over Object Relational Mapping (ORM) and the creation of a video object instance from a class to the database
+
 ## Debugger 
 - ![image](https://i.ibb.co/qg3MPYL/image.png)
 - Here we have a list of videos seen as the video list with [vid1,vid2]
@@ -39,11 +40,13 @@ courses: {'csp': {'week': 30}}
 # API and JSON
 
 ## Get Request
-- ![image](https://i.ibb.co/T0f2WZ0/image.png)
+- ![image](https://i.ibb.co/6FDscbP/image.png)
+- ![image](https://i.ibb.co/kq3f8S6/image.png)
 - ![image](https://i.ibb.co/Vm9bxvs/image.png)
 - Here we query the video with the specific Video ID, when going to the corresponding integer in the URL (for example: backend/1 would corresponding to the video with ID 1)
 
 ## Post Request
+- ![image](https://i.ibb.co/rsnVrRH/image.png)
 - ![image](https://i.ibb.co/YZ1582B/image.png)
 - Here we upload the video and if  the body of the response is JSON and convert all the metadata to the corresponding video object. Then we use the create method for the specific thumbnail image to the instance
 - Otherwise if the response isn't JSON, so we know it's uploading the code saves it within the VIDEO directory in the backend and we record the Video User ID
@@ -51,9 +54,11 @@ courses: {'csp': {'week': 30}}
 ### The validation above in the POST request is to make sure the JSON isn't mepty and is formatted properly
 
 ## Put Request
+- ![image](https://i.ibb.co/vVsRSQv/image.png)
 - ![image](https://i.ibb.co/t41wZZN/image.png)
 - First it checks if the body is json, and it queries the video to the specific ID and we get the specific TYPE on the video. If the specific TYPE is registered as a 1 it's a like and if it's a 2 it's considered a dislike.
 - We also do this with the views and we update it.
+- ![image](https://i.ibb.co/Tg9jCr2/image.png)
 - ![image](https://i.ibb.co/wwgFQ1h/image.png)
 - The PUT request modifies the views, likes, and dislikes 
 
