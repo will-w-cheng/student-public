@@ -87,7 +87,7 @@ courses: {'csp': {'week': 30}}
 - POST request shows the JSON response (uploading videos)
 - ![image](https://i.ibb.co/QKF9kP8/image.png)
 - PUT request shows the JSON response (liking the video)
-- ![image](https://i.ibb.co/L5Hdtg0/image.png)
+- ![image](https://i.ibb.co/L5Hdtg0/image.png) 
 
 ## In the Chrome browser, show a demo (GET) of obtaining an Array of JSON objects that are formatted into the browsers screen.
 - ![image](https://i.ibb.co/gWsc4JC/image.png)
